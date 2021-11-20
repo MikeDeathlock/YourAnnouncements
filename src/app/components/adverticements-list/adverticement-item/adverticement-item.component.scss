@@ -1,0 +1,84 @@
+@import "../../../../stylings/variables.scss";
+
+.main-item-container {
+    width: 100%;
+    display: flex;    
+    flex-wrap: nowrap;
+    padding: 8px;
+    margin: 0 0 15px 0;
+    background-color: $white;
+    box-sizing: border-box;
+    border: 1px solid $black;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px $black;
+
+    .img-container {
+        width: 40%;
+        border-radius: 5px;
+        display: block;
+        overflow: hidden;
+
+        img {            
+            width: 100%;
+            max-width: 337px;
+            max-height: 190px;
+            cursor: pointer;
+            transition: .3s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+    }
+
+    .title-container {
+        width: 45%;
+        padding: 0 5px 5px 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+
+        h3 {
+            font-weight: 600;
+            color: $headerbackground;
+            text-shadow: 1px 1px 1px $darkgrey;
+            cursor: pointer;
+            transition: .4s;
+
+            &:hover {
+                color: $hovercolor;
+            }
+        }
+
+        p {
+            font-size: 14px;
+            color: $headerbackground;
+            cursor: default;
+            margin-bottom: 0;
+        }
+    }
+
+    .buttons-container {
+        width: 15%;
+        display: flex;   
+        justify-content: flex-end;
+        font-size: 22px;
+        color: $headerbackground;        
+        
+        i {
+            margin: 5px 5px 0 5px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .edit:hover {
+            color: $hovercolor;
+        }
+
+        .delete:hover {
+            color: $red;
+        }
+    }
+}

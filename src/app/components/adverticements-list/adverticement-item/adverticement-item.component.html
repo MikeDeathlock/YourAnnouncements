@@ -1,1 +1,13 @@
-<p>adverticement-item works!</p>
+<div class="main-item-container" *ngIf="adverticementElement">
+    <div class="img-container">        
+        <img src="{{adverticementElement.img}}" alt="{{adverticementElement.title}}">               
+    </div>
+    <div class="title-container">
+        <h3>{{adverticementElement.title}}</h3>
+        <p>{{adverticementElement.date | date:"dd MMMM YYYY  HH.mm.ss"}}</p>
+    </div>
+    <div class="buttons-container">
+        <i class="fas fa-edit edit" title="Edit"></i>
+        <i class="fas fa-trash-alt delete" title="Delete"></i>        
+    </div>
+</div>

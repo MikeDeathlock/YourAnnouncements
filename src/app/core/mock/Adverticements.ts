@@ -73,16 +73,16 @@ export class Adverticements {
         },
         {
             id: 9,
-            title: "I am looking for some person.",
+            title: "I am looking for a dude.",
             img: "https://ychef.files.bbci.co.uk/976x549/p078mnwj.jpg",
-            description: "I need some person for a walk, restorants, cinemas, sport competitions and comunication because I feel that I am alone. If you are alone just call me.",
+            description: "I need some dude for a walk, bars, cinemas, sport competitions and comunication because I feel that I am alone. If you are alone just call me.",
             category: "Search for Services",
             date: new Date()
         },
         {
             id: 10,
-            title: "I am looking for a tent",
-            img: "https://cdn.shopify.com/s/files/1/0746/2535/products/P1030926_900x.JPG?v=1539684162",
+            title: "I am looking for a tent.",
+            img: "https://www.outsideonline.com/wp-content/uploads/2019/12/12/carcinogens-tent-camping_h.jpg",
             description: "I am looking for a good tent for some hiking. I don't have enough money for it. So i am looking a tent here. I need a tent only for one person. I am waiting for your offers. Thank You.",
             category: "Purchase",
             date: new Date()
