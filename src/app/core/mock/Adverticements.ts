@@ -1,4 +1,9 @@
+import { Injectable } from "@angular/core";
 import { Advert } from "../interfaces/advert";
+
+@Injectable({
+    providedIn: 'root'
+})
 
 export class Adverticements {
     private adverticements: Advert[] = [

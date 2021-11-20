@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Advert } from 'src/app/core/interfaces/advert';
+import { AdverticementsService } from 'src/app/core/services/adverticements.service';
 
 @Component({
   selector: 'app-adverticements-list',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adverticements-list.component.scss']
 })
 export class AdverticementsListComponent implements OnInit {
+  adverticements!: Advert[];
 
-  constructor() { }
+  constructor(private adverticementsService: AdverticementsService) { }
 
   ngOnInit(): void {
+    this.adverticements = this.adverticementsService.adverticements;    
   }
 
 }
