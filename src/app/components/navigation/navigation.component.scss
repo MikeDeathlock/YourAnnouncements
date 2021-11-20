@@ -29,12 +29,7 @@
                     font-weight: 600;
                     color: $headerbackground;
                     padding: 8px 10px;
-                    transition: .4s;
-
-                    &:hover {
-                        background-color: $headerbackground;
-                        color: $white;
-                    }    
+                    transition: .4s;   
                 }
 
                 .active {
