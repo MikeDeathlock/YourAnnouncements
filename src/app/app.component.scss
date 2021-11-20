@@ -1,0 +1,31 @@
+@import "./../stylings/variables.scss";
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+    background-color: $mainbackground;
+    
+    .container {
+        flex: 1 0 auto;
+        padding: 10px;        
+
+        .home-page-container {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+
+            app-navigation {
+                width: 25%;
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }    
+        }
+    }
+    app-footer {
+        flex: 0 0 auto;
+    }
+}
+

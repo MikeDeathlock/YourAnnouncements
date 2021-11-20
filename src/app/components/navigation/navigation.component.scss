@@ -1,0 +1,47 @@
+@import "../../../stylings/variables.scss";
+
+.navigation-container {
+    width: 100%;
+    padding: 10px 15px 0 0;
+    
+    .nav-bar {
+        width: 100%;
+        padding: 0;
+        background-color: $white;        
+        border: 1px solid $darkgrey;
+        box-shadow: 1px 2px 3px $darkgrey;
+        border-radius: 3px;
+
+        .nav-list {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+
+            li {
+                width: 100%;
+                padding: 0;
+
+                a { 
+                    display: block;
+                    width: 100%;
+                    text-decoration: none;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $headerbackground;
+                    padding: 8px 10px;
+                    transition: .4s;
+
+                    &:hover {
+                        background-color: $headerbackground;
+                        color: $white;
+                    }    
+                }
+
+                .active {
+                    background-color: $headerbackground;
+                    color: $white;
+                }
+            }
+        }
+    }
+}

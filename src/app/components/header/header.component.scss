@@ -1,0 +1,35 @@
+@import "../../../stylings/variables.scss";
+
+.header-container {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;    
+    background-color: $headerbackground;
+    // background-color: rgb(126, 18, 204);
+    // background-color: rgb(139, 238, 139);
+    // background-color: rgb(252, 202, 137);
+    // background-color: rgb(252, 164, 152)
+    // background-color: rgb(44, 196, 196); // I like this more
+    color: $white;
+
+    .logo {
+        display: flex;
+        margin-left: 10px;
+        justify-content: center;
+        width: 20%;
+        text-decoration: none;              
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        color: $white;
+        text-shadow: 1px 1px 2px $black;
+        transition: .4s;
+
+        &:hover {
+            color: $hovercolor;
+            text-shadow: 1px 1px 2px $darkgrey;
+        }
+    }
+}
