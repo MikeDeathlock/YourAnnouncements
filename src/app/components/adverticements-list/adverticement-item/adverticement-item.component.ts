@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdverticementsService } from 'src/app/core/services/adverticements.service';
 import { Advert } from "../../../core/interfaces/advert"
 
@@ -12,7 +13,9 @@ export class AdverticementItemComponent implements OnInit {
   @Input() index!:number;
 
 
-  constructor(private adverticementsService: AdverticementsService) { }
+  constructor(
+    private adverticementsService: AdverticementsService,
+    private router: Router) { }
 
   ngOnInit(): void {
     
@@ -21,6 +24,14 @@ export class AdverticementItemComponent implements OnInit {
   onSelectedAdvert() {
     this.adverticementsService.advertDetailsSelected.next(this.adverticementElement);
     this.adverticementsService.advertDetailsDisplay.next(true);
+  }
+
+  onEdit() {
+    this.router.navigate(['/edit-advert/', this.adverticementElement.id])
+  }
+
+  onDelete() {
+    this.adverticementsService.deleteAdvert(this.adverticementElement.id);
   }
 
 }

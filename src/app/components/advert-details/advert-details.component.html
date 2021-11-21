@@ -1,4 +1,4 @@
-<div class="details-container" (click)="onClose()">
+<div class="details-container" (click)="onClose()" *ngIf="advertDetails">
     <div class="content-container" (click)="$event.stopPropagation()">
         <div class="close-details">
             <i class="fas fa-times" (click)="onClose()"></i>

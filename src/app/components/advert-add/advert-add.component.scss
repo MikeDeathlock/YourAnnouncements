@@ -1,0 +1,27 @@
+@import "../../../stylings/variables.scss";
+
+.adverticement-add-container {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        margin: 0 0 20px 0;
+        padding: 0;
+        font-weight: 600;
+        color: $headerbackground;
+        text-shadow: 1px 2px 2px $black;
+        cursor: default;
+    }
+
+    .adverticement-add-form-container {
+        width: 100%;
+        padding: 20px 0 5px 0;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+}

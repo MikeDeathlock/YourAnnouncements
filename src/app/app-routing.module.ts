@@ -23,7 +23,7 @@ const routes: Routes = [
           import('./components/advert-add/advert-add.module').then((m) => m.AdvertAddModule)
       },
       {
-        path: 'edit-advert',
+        path: 'edit-advert/:id',
         loadChildren: () =>
           import('./components/advert-edit/advert-edit.module').then((m) => m.AdvertEditModule)
       },

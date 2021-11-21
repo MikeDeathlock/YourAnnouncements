@@ -14,4 +14,14 @@ export class AdverticementsService {
   constructor(private adverticementsData: Adverticements) {
     this.adverticements = this.adverticementsData.getAdverticements();
   }
+
+  getEditAdvert(id:number) {  
+    return this.adverticements.find(data => data.id === id); 
+  }
+  
+  deleteAdvert(id:number) {
+    const index = this.adverticements.findIndex(data => data.id === id);
+    this.adverticements.splice(index, 1);
+    console.log(this.adverticements);
+  }
 }
