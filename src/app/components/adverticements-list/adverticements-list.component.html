@@ -17,8 +17,9 @@
     </div>
     <div class="adverticements-items-container" *ngIf="adverticements">
         <app-adverticement-item 
-            *ngFor="let advert of filteredAdverticements" 
+            *ngFor="let advert of filteredAdverticements; let i = index" 
             [adverticementElement]="advert"
+            [index]="i"
         >
         </app-adverticement-item>
     </div>

@@ -9,6 +9,8 @@ import { Advert } from "../../../core/interfaces/advert"
 })
 export class AdverticementItemComponent implements OnInit {
   @Input() adverticementElement!:Advert;
+  @Input() index!:number;
+
 
   constructor(private adverticementsService: AdverticementsService) { }
 

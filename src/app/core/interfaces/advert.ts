@@ -1,5 +1,4 @@
-export interface Advert {
-    id: number,
+export interface Advert {    
     title: string,
     img: string,
     description: string,
