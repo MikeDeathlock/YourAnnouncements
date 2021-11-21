@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AdverticementsService } from 'src/app/core/services/adverticements.service';
 import { Advert } from "../../../core/interfaces/advert"
 
 @Component({
@@ -9,10 +10,15 @@ import { Advert } from "../../../core/interfaces/advert"
 export class AdverticementItemComponent implements OnInit {
   @Input() adverticementElement!:Advert;
 
-  constructor() { }
+  constructor(private adverticementsService: AdverticementsService) { }
 
   ngOnInit(): void {
-    console.log(this.adverticementElement);
+    
+  }
+
+  onSelectedAdvert() {
+    this.adverticementsService.advertDetailsSelected.next(this.adverticementElement);
+    this.adverticementsService.advertDetailsDisplay.next(true);
   }
 
 }

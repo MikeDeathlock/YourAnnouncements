@@ -1,0 +1,93 @@
+@import "../../../stylings/variables.scss";
+
+.details-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(128, 128, 128, 0.712);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .content-container {
+        width: 75%;
+        padding: 25px;
+        display: flex;    
+        background-color: $white;
+        border: 2px solid $black;
+        border-radius: 5px;
+        position: relative;
+        cursor: default;
+
+        .close-details {
+            width: 25px;
+            position: absolute;
+            top: 5px;
+            right: 0;
+
+            i {
+                font-size: 22px;  
+                transition: .3s;
+                cursor: pointer;  
+
+                &:hover {
+                    color: $red;
+                }
+            }    
+        }
+
+        .img-container {
+            width: 55%;
+            overflow: hidden;            
+            border-radius: 3px;
+            box-sizing: border-box;
+
+            img {
+                width: 100%;
+            }
+        }
+        .content-details {
+            width: 44%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            padding: 0 0 0 7px;
+
+            h3 {
+                width: 100%;
+                text-align: center;
+                margin: 0 0 10px 0;
+                color: $headerbackground;
+                font-weight: 500;
+                text-shadow: 1px 1px 1px $black;
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+            .category-date {
+                p {
+                    .content-bold {
+                        font-size: 17px;
+                        font-weight: 700;
+                    }
+                }    
+            }
+
+            .description {                
+
+                h4 {
+                    font-weight: bold;
+                }
+
+                p {
+                    text-align: justify;
+                }
+            }
+        }
+    }
+}

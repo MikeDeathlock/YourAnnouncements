@@ -1,1 +1,24 @@
-<p>advert-details works!</p>
+<div class="details-container" (click)="onClose()">
+    <div class="content-container" (click)="$event.stopPropagation()">
+        <div class="close-details">
+            <i class="fas fa-times" (click)="onClose()"></i>
+        </div>
+        <div class="img-container">
+            <img src="{{advertDetails.img}}" alt="">
+        </div>
+        <div class="content-details">
+            <h3>{{advertDetails.title}}</h3>
+            <div class="category-date">
+                <p><span class="content-bold">Category: </span> {{advertDetails.category}}</p>
+                <p>
+                    <span class="content-bold">Date: </span> 
+                    {{advertDetails.date | date:"MMMM dd   HH.mm.ss"}}
+                </p>
+            </div>
+            <div class="description">
+                <h4>Description:</h4>
+                <p>{{advertDetails.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

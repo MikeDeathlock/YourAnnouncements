@@ -36,7 +36,7 @@ export class Adverticements {
             title: "I am looking for an electrician!",
             img: "https://st.depositphotos.com/1000291/3041/i/600/depositphotos_30414567-stock-photo-adult-electrician-engineer-worker.jpg",
             description: "I am looking for a good electrician. I need high-quality and professional work with the power supply on the roof of my house. I am waiting for your suggestions.",
-            category: "Search for Services",
+            category: "Professionals",
             date: new Date()
         },
         {
@@ -76,7 +76,7 @@ export class Adverticements {
             title: "I am looking for a dude.",
             img: "https://ychef.files.bbci.co.uk/976x549/p078mnwj.jpg",
             description: "I need some dude for a walk, bars, cinemas, sport competitions and comunication because I feel that I am alone. If you are alone just call me.",
-            category: "Search for Services",
+            category: "Professionals",
             date: new Date()
         },
         {

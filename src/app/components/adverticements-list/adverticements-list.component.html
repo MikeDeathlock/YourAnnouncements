@@ -1,20 +1,26 @@
 <div class="adverticements-list-container">
     <h2>Choose your Announcement</h2>
     <div class="search-container">
-        <input type="text" placeholder="Search...">
-        <select>
-            <option value="all">All</option>
-            <option value="selling">Selling</option>
-            <option value="purchase">Purchase</option>
-            <option value="services">Services</option>
-            <option value="search">Search for Services</option>
+        <input 
+            type="text" 
+            placeholder="Search..."
+            #searchTitleInput
+            (input)="searchTitle(searchTitleInput.value)"
+        >
+        <select (change)="onCategorySelectChange($event)">
+            <option value="All">All</option>
+            <option value="Selling">Selling</option>
+            <option value="Purchase">Purchase</option>
+            <option value="Services">Services</option>
+            <option value="Professionals">Search for Services</option>
         </select>
     </div>
     <div class="adverticements-items-container" *ngIf="adverticements">
         <app-adverticement-item 
-            *ngFor="let advert of adverticements" 
+            *ngFor="let advert of filteredAdverticements" 
             [adverticementElement]="advert"
         >
         </app-adverticement-item>
     </div>
+    <app-advert-details [advertDetails]="detailsSelected" *ngIf="displayDetails"></app-advert-details>
 </div>

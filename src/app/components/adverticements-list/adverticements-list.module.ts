@@ -5,13 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { AdvertAddRoutingModule } from './adverticements-list-routing.module';
 import { AdverticementsListComponent } from './adverticements-list.component';
 import { AdverticementItemComponent } from './adverticement-item/adverticement-item.component';
+import { AdvertDetailsComponent } from '../advert-details/advert-details.component';
 
 
 
 @NgModule({
   declarations: [
     AdverticementsListComponent,
-    AdverticementItemComponent
+    AdverticementItemComponent,
+    AdvertDetailsComponent
   ],
   imports: [
     CommonModule,
