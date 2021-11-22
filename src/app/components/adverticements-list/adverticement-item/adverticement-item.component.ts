@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AdverticementsService } from 'src/app/core/services/adverticements.service';
 import { Advert } from "../../../core/interfaces/advert"
 
@@ -15,7 +16,8 @@ export class AdverticementItemComponent implements OnInit {
 
   constructor(
     private adverticementsService: AdverticementsService,
-    private router: Router) { }
+    private router: Router,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     
@@ -32,6 +34,7 @@ export class AdverticementItemComponent implements OnInit {
 
   onDelete() {
     this.adverticementsService.deleteAdvert(this.adverticementElement.id);
+    this.toastr.warning('This adverticement has been deleted.');
   }
 
 }
