@@ -29,6 +29,15 @@ const routes: Routes = [
       },
     ]
   },
+  {
+    path: 'error-page',
+    loadChildren: () =>
+      import('./components/errors/page404/page404.module').then((m) => m.Page404Module)
+  },
+  {
+    path: '**',
+    redirectTo: 'error-page'
+  }
   
 ];
 

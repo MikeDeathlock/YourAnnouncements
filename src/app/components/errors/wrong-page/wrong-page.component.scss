@@ -1,0 +1,35 @@
+@import "../../../../stylings/variables.scss";
+
+
+.wrong-page-container {
+    width: 100%;
+    padding: 20px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1,h2 {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 0;        
+    }
+
+    h2 {
+        margin-bottom: 30px;        
+    }
+
+    .red {
+        color: $red;
+    }
+    
+
+    .btn-primary {
+        background-color: $headerbackground;
+        transition: .4s;
+
+        &:hover {
+            background-color: $hovercolor;
+        }
+    }
+}

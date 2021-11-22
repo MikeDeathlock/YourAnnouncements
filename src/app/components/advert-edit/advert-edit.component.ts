@@ -18,8 +18,6 @@ export class AdvertEditComponent implements OnInit {
   ngOnInit(): void {
     const id = +this.route.snapshot.params['id'];    
     this.editAdvert = this.adverticementsService.getEditAdvert(id);
-    console.log(this.editAdvert);
-
   }
 
 }

@@ -2,7 +2,7 @@
     <app-header></app-header>
     <div class="container">
         <div class="home-page-container">
-            <app-navigation></app-navigation>
+            <app-navigation *ngIf="onHideNavigation()"></app-navigation>
             <router-outlet></router-outlet>
         </div>        
     </div>    

@@ -1,7 +1,8 @@
 <div class="adverticement-edit-container">
-    <h2>Edit your Announcement</h2>
+    <h2 *ngIf="editAdvert">Edit your Announcement</h2>
     
     <div class="adverticement-edit-form-container">
 
     </div>
+    <app-wrong-page *ngIf="!editAdvert"></app-wrong-page>
 </div>
