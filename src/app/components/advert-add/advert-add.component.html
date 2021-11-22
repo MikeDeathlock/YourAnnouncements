@@ -1,7 +1,58 @@
 <div class="adverticement-add-container">
     <h2>Add your Announcement</h2>
     
-    <div class="adverticement-add-form-container">
-
+    <div class="adverticement-add-form-container" >
+        <div class="form-container">
+            <form [formGroup]="adverticementAddGroup" (ngSubmit)="onSubmit()">
+                <div class="adverticement-data-container">
+                    <div class="form-group">
+                        <label for="title">Title:</label>
+                        <input 
+                            type="text" 
+                            id="title"
+                            formControlName="title"                            
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category:</label>
+                        <select
+                            id="category"                            
+                            class="form-control"                    
+                            formControlName="category"                            
+                        >                            
+                            <option value="Selling">Selling</option>
+                            <option value="Purchase">Purchase</option>
+                            <option value="Services">Services</option>
+                            <option value="Professionals">Search for Services</option>
+                        </select>                       
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea
+                            id="description"                            
+                            class="form-control" 
+                            rows="3"
+                            formControlName="description"                             
+                        >
+                        </textarea>                       
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image:</label>
+                        <input 
+                            type="text" 
+                            id="image"
+                            formControlName="img"                            
+                        >
+                    </div>
+                    <button 
+                        class="btn btn-primary" 
+                        type="submit"
+                        [disabled]="adverticementAddGroup.invalid || false"
+                    >
+                        Add Your Announcement
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

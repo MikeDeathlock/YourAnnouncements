@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AdverticementsService } from 'src/app/core/services/adverticements.service';
@@ -12,6 +12,7 @@ import { Advert } from "../../../core/interfaces/advert"
 export class AdverticementItemComponent implements OnInit {
   @Input() adverticementElement!:Advert;
   @Input() index!:number;
+  @Output() onDeleteEl = new EventEmitter<number>();
 
 
   constructor(
@@ -34,7 +35,8 @@ export class AdverticementItemComponent implements OnInit {
 
   onDelete() {
     this.adverticementsService.deleteAdvert(this.adverticementElement.id);
-    this.toastr.warning('This adverticement has been deleted.');
+    this.onDeleteEl.emit(this.adverticementElement.id);
+    this.toastr.warning('The Announcement has been deleted.');
   }
 
 }

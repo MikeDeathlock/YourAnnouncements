@@ -86,6 +86,22 @@ export class Adverticements {
             description: "I am looking for a good tent for some hiking. I don't have enough money for it. So i am looking a tent here. I need a tent only for one person. I am waiting for your offers. Thank You.",
             category: "Purchase",
             date: new Date()
+        },
+        {
+            id: 11,
+            title: "I am looking for a tent.",
+            img: "https://www.outsideonline.com/wp-content/uploads/2019/12/12/carcinogens-tent-camping_h.jpg",
+            description: "I am looking for a good tent for some hiking. I don't have enough money for it. So i am looking a tent here. I need a tent only for one person. I am waiting for your offers. Thank You.",
+            category: "Purchase",
+            date: new Date()
+        },
+        {
+            id: 12,
+            title: "I am looking for a tent.",
+            img: "https://www.outsideonline.com/wp-content/uploads/2019/12/12/carcinogens-tent-camping_h.jpg",
+            description: "I am looking for a good tent for some hiking. I don't have enough money for it. So i am looking a tent here. I need a tent only for one person. I am waiting for your offers. Thank You.",
+            category: "Purchase",
+            date: new Date()
         }
     ];
 

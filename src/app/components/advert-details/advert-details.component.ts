@@ -9,10 +9,14 @@ import { AdverticementsService } from 'src/app/core/services/adverticements.serv
 })
 export class AdvertDetailsComponent implements OnInit {
   @Input() advertDetails!: Advert;
+  recomendations!:Advert[];
 
   constructor(private adverticementsService: AdverticementsService) { }
 
   ngOnInit(): void {
+    this.recomendations = this.adverticementsService
+      .getRecomendedByTitle(this.advertDetails.id, this.advertDetails.title, this.advertDetails.description);
+      console.log("Recomendations ",this.recomendations);
   }
 
   onClose() {

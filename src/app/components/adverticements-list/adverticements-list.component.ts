@@ -61,6 +61,10 @@ export class AdverticementsListComponent implements OnInit, OnDestroy {
     }
   }
 
+  onDeleteEl() {
+    this.filterAdverticements();
+  }
+
   ngOnDestroy(): void {
     this.advertDetailsSubscription?.unsubscribe();
     this.detailsDisplaySubscription?.unsubscribe();
