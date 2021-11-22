@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { AdvertAddRoutingModule } from './advert-add-routing.module';
 import { AdvertAddComponent } from './advert-add.component';
@@ -12,7 +13,8 @@ import { AdvertAddComponent } from './advert-add.component';
   ],
   imports: [
     CommonModule,
-    AdvertAddRoutingModule
+    AdvertAddRoutingModule,
+    FormsModule
   ]
 })
 export class AdvertAddModule { }

@@ -1,8 +1,55 @@
 <div class="adverticement-edit-container">
     <h2 *ngIf="editAdvert">Edit your Announcement</h2>
     
-    <div class="adverticement-edit-form-container">
-
+    <div class="adverticement-edit-form-container" *ngIf="editAdvert">
+        <div class="form-container">
+            <form (ngSubmit)="onSubmit()" #f="ngForm">
+                <div 
+                    class="adverticement-data-container"
+                    id="adverticement-data" 
+                    ngModelGroup="adverticementData" 
+                    #adverticementData="ngModelGroup"
+                >
+                    <div class="form-group">
+                        <label for="title">Title:</label>
+                        <input 
+                            type="text" 
+                            id="title"                           
+                            ngModel
+                            name="title"
+                            [placeholder]="editAdvert.title"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea
+                            id="description"                            
+                            class="form-control" 
+                            rows="3"                           
+                            ngModel
+                            name="description"
+                            [placeholder]="editAdvert.description"
+                        >
+                        </textarea>                       
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image:</label>
+                        <input 
+                            type="text" 
+                            id="image"                           
+                            ngModel
+                            name="img"
+                            [placeholder]="editAdvert.img"
+                        >
+                    </div>
+                    <button 
+                        class="btn btn-primary" 
+                        type="submit">
+                        Edit Your Announcement
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
     <app-wrong-page *ngIf="!editAdvert"></app-wrong-page>
 </div>

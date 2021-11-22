@@ -18,10 +18,14 @@ export class AdverticementsService {
   getEditAdvert(id:number) {  
     return this.adverticements.find(data => data.id === id); 
   }
+
+  editAdvert(edAdvert:Advert) {
+    const index = this.adverticements.findIndex(data => data.id === edAdvert.id);
+    this.adverticements[index] = edAdvert;
+  }
   
   deleteAdvert(id:number) {
     const index = this.adverticements.findIndex(data => data.id === id);
-    this.adverticements.splice(index, 1);
-    console.log(this.adverticements);
+    this.adverticements.splice(index, 1);  
   }
 }
