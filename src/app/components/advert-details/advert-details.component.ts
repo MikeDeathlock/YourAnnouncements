@@ -22,4 +22,10 @@ export class AdvertDetailsComponent implements OnInit {
     this.adverticementsService.advertDetailsDisplay.next(false);
   }
 
+  onSelectRecomendation(recomendation:Advert) {
+    this.adverticementsService.advertDetailsSelected.next(recomendation);
+    this.recomendations = this.adverticementsService
+      .getRecomendedByTitle(recomendation.id, recomendation.title); 
+  }
+
 }

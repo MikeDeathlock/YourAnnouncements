@@ -20,12 +20,20 @@
                 <p>{{advertDetails.description}}</p>
             </div>
         </div>
-        <div class="recomendations-container">
+        <div class="recomendations-container" *ngIf="recomendations">
             <div class="recomendation" *ngFor="let recomendation of recomendations">
                 <div class="recomendation-img">
-                    <img src="{{recomendation.img}}" alt="">
+                    <img 
+                        src="{{recomendation.img}}"                        
+                        (click)="onSelectRecomendation(recomendation)"
+                    >
                 </div>
-                <p class="recomendation-title">{{recomendation.title}}</p>
+                <p 
+                    class="recomendation-title"
+                    (click)="onSelectRecomendation(recomendation)"
+                >
+                    {{recomendation.title}}
+                </p>
             </div>
         </div>        
     </div>
