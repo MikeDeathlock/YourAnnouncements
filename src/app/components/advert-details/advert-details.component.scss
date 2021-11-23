@@ -13,8 +13,9 @@
 
     .content-container {
         width: 75%;
-        padding: 25px;
-        display: flex;    
+        padding: 25px 25px 10px;
+        display: flex;
+        flex-wrap: wrap;    
         background-color: $white;
         border: 2px solid $black;
         border-radius: 5px;
@@ -86,6 +87,44 @@
 
                 p {
                     text-align: justify;
+                }
+            }
+        }
+
+        .recomendations-container {
+            width: 100%;
+            padding: 10px 10px 0 10px;
+            display: flex;
+            justify-content: center;            
+
+            .recomendation {
+                width: 20%;
+                margin-left: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .recomendation-img {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    overflow: hidden;
+                    box-sizing: border-box;
+
+                    img {
+                        width: 100%;
+                        max-height: 99px;
+                        min-height: 99px;
+                        max-width: 178px;
+                    }
+                }
+
+                p {
+                    width: 100%;
+                    text-align: center;
+                    font-weight: 500;
+                    margin: 0;
+                    padding: 5px 2px 0;
                 }
             }
         }

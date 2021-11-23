@@ -20,8 +20,13 @@
                 <p>{{advertDetails.description}}</p>
             </div>
         </div>
-        <div class="recomendations">
-            
+        <div class="recomendations-container">
+            <div class="recomendation" *ngFor="let recomendation of recomendations">
+                <div class="recomendation-img">
+                    <img src="{{recomendation.img}}" alt="">
+                </div>
+                <p class="recomendation-title">{{recomendation.title}}</p>
+            </div>
         </div>        
     </div>
 </div>

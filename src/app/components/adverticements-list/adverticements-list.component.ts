@@ -42,7 +42,7 @@ export class AdverticementsListComponent implements OnInit, OnDestroy {
     this.filterAdverticements();
   }
 
-  onCategorySelectChange(event:any) {   
+  onCategorySelectChange(event:any) {
     this.categorySearch = event.target.value;
     this.filterAdverticements();
   }

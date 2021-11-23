@@ -15,11 +15,21 @@ export class AdverticementsService {
     this.adverticements = this.adverticementsData.getAdverticements();
   }
 
+  getNewId():number {
+    let idCount = 0;
+    for(let i = 0; i < this.adverticements.length; i++) {
+      if(this.adverticements[i].id > 0) {
+        idCount = this.adverticements[i].id;
+      }
+    }
+    return idCount + 1;
+  }
+
   addNewAdvert(addAdvert:Advert) {
     this.adverticements.unshift(addAdvert);
   }
 
-  getEditAdvert(id:number) {  
+  getEditAdvert(id:number):Advert | undefined {  
     return this.adverticements.find(data => data.id === id); 
   }
 
@@ -33,35 +43,32 @@ export class AdverticementsService {
     this.adverticements.splice(index, 1);  
   }
 
-
-  getRecomendedByTitle(id:number, title:string, text:string):Advert[] {
+  getRecomendedByTitle(id:number, title:string):Advert[] {
     let splitTitle1 = title.split(' ');
-    let recomendations:Advert[] = [];    
+    let recomendations:Advert[] = [];
     for(let i = 0; i < this.adverticements.length; i++) {
-      if(this.adverticements[i].id === id) continue;
+      if (this.adverticements[i].id === id) {    
+        continue;
+      }
       let splitTitle2 = this.adverticements[i].title.split(' ');
       for(let k = 0; k < splitTitle2.length; k++) {
-        if(splitTitle2[k].length > 3 && splitTitle1.includes(splitTitle2[k])) {
-          // let description = this.adverticements[i].description;
-          let result = this.getRecomendedByDescription(text, i);
-          if (result) {
-            recomendations.push(result);
-            i++;
-            break
-          }
+        if (splitTitle2[k].length > 3 && splitTitle1.includes(splitTitle2[k])) {
+          let splitDescription = this.adverticements[i].description.split(' ');
+          for(let m = 0; m < splitDescription.length; m++) {
+            if (splitTitle1.includes(splitDescription[m])) {
+              let filter = recomendations.filter(x => x.id === this.adverticements[i].id);
+              if (filter.length <= 0) {
+                recomendations.push(this.adverticements[i]);
+              }              
+              if (recomendations.length === 3) {
+                return recomendations;
+              }  
+              break
+            }
+          }  
         }
       }
     }
     return recomendations;
-  }
-
-  getRecomendedByDescription(description:string, index:number) {
-    let splitDesc1 = description.split(' ');
-    for(let i = 0; i < splitDesc1.length; i++) {
-      if(splitDesc1[i].length > 3 && this.adverticements[index].description.includes(splitDesc1[i])) {
-        return this.adverticements[index];
-      }      
-    }
-    return null;
   }
 }

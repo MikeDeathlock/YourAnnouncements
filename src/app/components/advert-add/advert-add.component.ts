@@ -13,6 +13,7 @@ import { AdverticementsService } from '../../core/services/adverticements.servic
 export class AdvertAddComponent implements OnInit {
   adverticementAddGroup!: FormGroup;
 
+  idValue!:number;
   titleValue!: string;
   categoryValue!: string;
   descriptionValue!: string;
@@ -24,6 +25,8 @@ export class AdvertAddComponent implements OnInit {
     private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    this.idValue = this.adverticementsService.getNewId();
+
     this.adverticementAddGroup = this.formBuilder.group({      
       title: ['',[Validators.required, Validators.minLength(5)]],
       img: ['',[Validators.required, Validators.minLength(5)]],
@@ -50,7 +53,7 @@ export class AdvertAddComponent implements OnInit {
 
   onSubmit() {
     const newAdverticement:Advert = {
-      id: Math.floor(Math.random() * 1000000),
+      id: this.idValue,
       title: this.titleValue,
       img: this.imgValue,
       description: this.descriptionValue,

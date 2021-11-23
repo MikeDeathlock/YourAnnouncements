@@ -15,8 +15,7 @@ export class AdvertDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.recomendations = this.adverticementsService
-      .getRecomendedByTitle(this.advertDetails.id, this.advertDetails.title, this.advertDetails.description);
-      console.log("Recomendations ",this.recomendations);
+      .getRecomendedByTitle(this.advertDetails.id, this.advertDetails.title);    
   }
 
   onClose() {
